@@ -1,0 +1,116 @@
+.anchor {
+  --border: 0, 0, 0;
+  --border-opacity: 1;
+  display: flex;
+  background-image: linear-gradient(
+    0deg,
+    rgba(var(--border), var(--border-opacity)),
+    rgba(var(--border), var(--border-opacity))
+  );
+  background-size: 0% 0.1em;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  transition: background-size calc(var(--delayedDuration));
+  transition-timing-function: ease-in;
+  @apply py-1 mx-1;
+}
+.anchor.playAnimate {
+  /* transition: background-size calc(var(--delayedDuration) - 400ms); */
+  background-size: 100% 0.1em;
+  background-position: bottom left;
+}
+
+.anchor .firstText {
+  display: flex;
+}
+.anchor .firstText .firstTextLetter {
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: fit-content;
+  /* transform: translateY(0%); */
+  /* transition: transform 350ms; */
+  /* animation-name: firstLetterShow; */
+  /* animation-play-state: paused; */
+  /* animation-direction: alternate; */
+  animation-duration: 350ms;
+}
+.anchor:hover .firstText .firstTextLetter {
+  /* transform: translateY(-150%); */
+}
+.anchor .secondText {
+  position: absolute;
+  display: flex;
+}
+.anchor .secondText .secondTextLetter {
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: fit-content;
+  /* transform: translateY(110%); */
+  /* transition: transform 350ms; */
+  /* animation-name: secondLetterShow; */
+  /* animation-play-state: paused; */
+  /* animation-direction: alternate; */
+  transform: translateY(220%);
+  animation-duration: 350ms;
+}
+.anchor:hover .secondText .secondTextLetter {
+  /* transform: translateY(-100%); */
+}
+.anchor.playAnimate {
+  animation-play-state: running;
+}
+@keyframes anchorKeyframe {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.anchor .secondText .secondTextLetter,
+.anchor .firstText .firstTextLetter {
+  animation-play-state: paused;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+.isEntering {
+  animation-play-state: running;
+}
+.anchor.playAnimate .secondText .secondTextLetter {
+  animation-name: secondLetterShow;
+}
+.anchor.playAnimate .firstText .firstTextLetter {
+  animation-name: firstLetterShow;
+}
+.anchor.playAnimate .secondText .secondTextLetter,
+.anchor.playAnimate .firstText .firstTextLetter {
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+@keyframes firstLetterShow {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-150%);
+  }
+}
+@keyframes secondLetterShow {
+  0% {
+    transform: translateY(220%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
