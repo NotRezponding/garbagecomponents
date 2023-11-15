@@ -1,6 +1,7 @@
 "use client";
 
 import React, {
+  CSSProperties,
   DetailedHTMLProps,
   FC,
   HTMLAttributes,
@@ -13,6 +14,9 @@ import styles from "./styles.module.css";
 const Anchor: FC<
   DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> & {
     children?: string;
+    style?: CSSProperties & {
+      [key: string]: string;
+    };
   }
 > = ({ children, ...allProps }) => {
   const AnchorRef = useRef<HTMLSpanElement>(null);

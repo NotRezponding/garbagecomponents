@@ -4,6 +4,8 @@
 
 * {
   @apply tracking-tight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -78,4 +80,23 @@
   :root {
     font-size: 1.1vw;
   }
+}
+
+.perspective {
+  perspective: 100rem;
+  transform: scale(0.8);
+  transition: transform 150ms;
+}
+.perspective:hover {
+  transform: scale(1);
+}
+
+.test {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 200ms, filter 150ms;
+}
+.test:hover {
+  transition: transform 0ms, filter 150ms;
 }

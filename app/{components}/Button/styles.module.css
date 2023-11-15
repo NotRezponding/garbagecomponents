@@ -1,0 +1,39 @@
+.button {
+  --border: 0, 0, 0;
+  --border-opacity: 0.15;
+  --border-thick: 0.05rem;
+  box-shadow: 0 0 0 var(--border-thick)
+    rgba(var(--border), var(--border-opacity)) inset;
+
+  @apply py-4 px-10 rounded-full text-xs relative flex items-center justify-center isolate;
+  overflow: hidden;
+  transition: transform 350ms, background-color 150ms;
+  /* transform: matrix3d(); */
+  transform-origin: center;
+}
+.button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transition: transform 50ms, background-color 150ms;
+}
+.button:hover .child {
+  mix-blend-mode: exclusion;
+  color: white;
+}
+
+.circle {
+  --scale: 0;
+  --size: 5rem;
+  --blur: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 1);
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  opacity: 0;
+  filter: blur(var(--blur));
+  transition: transform 350ms, opacity 350ms, filter 150ms;
+}

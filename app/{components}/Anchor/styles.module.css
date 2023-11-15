@@ -1,7 +1,7 @@
 .anchor {
   --border: 0, 0, 0;
   --border-opacity: 1;
-  display: flex;
+  display: inline-flex;
   background-image: linear-gradient(
     0deg,
     rgba(var(--border), var(--border-opacity)),
@@ -10,9 +10,9 @@
   background-size: 0% 0.1em;
   background-repeat: no-repeat;
   background-position: bottom right;
-  transition: background-size calc(var(--delayedDuration));
+  transition: background-size calc(var(--delayedDuration) / 2);
   transition-timing-function: ease-in;
-  @apply py-1 mx-1;
+  @apply py-0.5 mx-1;
 }
 .anchor.playAnimate {
   /* transition: background-size calc(var(--delayedDuration) - 400ms); */
