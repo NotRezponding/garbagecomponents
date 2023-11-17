@@ -7,16 +7,16 @@
     rgba(var(--border), var(--border-opacity)),
     rgba(var(--border), var(--border-opacity))
   );
-  background-size: 0% 0.1em;
+  background-size: 0% 0.085em;
   background-repeat: no-repeat;
   background-position: bottom right;
   transition: background-size calc(var(--delayedDuration) / 2);
   transition-timing-function: ease-in;
-  @apply py-0.5 mx-1;
+  @apply py-0.5;
 }
 .anchor.playAnimate {
   /* transition: background-size calc(var(--delayedDuration) - 400ms); */
-  background-size: 100% 0.1em;
+  background-size: 100% 0.085em;
   background-position: bottom left;
 }
 

@@ -27,7 +27,7 @@ const Anchor: FC<
       : 0;
     AnchorRef.current?.style.setProperty(
       "--delayedDuration",
-      `${counts * 50}ms`
+      `${counts * 25}ms`
     );
   }, []);
 
@@ -35,6 +35,7 @@ const Anchor: FC<
     <span
       onMouseEnter={(e) => {
         e.currentTarget.classList.add(styles.playAnimate);
+        allProps?.onMouseEnter ? allProps?.onMouseEnter(e) : null;
       }}
       ref={AnchorRef}
       {...allProps}
@@ -44,7 +45,7 @@ const Anchor: FC<
         {children?.split("").map((text, index) => (
           <span
             className={styles.firstTextLetter}
-            style={{ animationDelay: `${index * 50}ms` }}
+            style={{ animationDelay: `${index * 25}ms` }}
           >
             {text == " " ? <>&nbsp;</> : text}
           </span>
@@ -59,7 +60,7 @@ const Anchor: FC<
               }
             }}
             className={styles.secondTextLetter}
-            style={{ animationDelay: `${index * 50}ms` }}
+            style={{ animationDelay: `${index * 25}ms` }}
           >
             {text == " " ? <>&nbsp;</> : text}
           </span>

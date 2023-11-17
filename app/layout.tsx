@@ -16,7 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={manrope.className}>{children}</body>
+      <body className={manrope.className}>
+        {/* <div id="content_wrapper"> */}
+        {/* <div id="web_content"> */}
+        {children}
+        {/* </div> */}
+        {/* </div> */}
+        <span id="moving_cursor"></span>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,27 @@
+.perspective {
+  --zoomLevel: 1.2;
+  --perspective: 100rem;
+  perspective: var(--perspective);
+  -ms-perspective: var(--perspective);
+  -moz-perspective: var(--perspective);
+  -webkit-perspective: var(--perspective);
+  transform: scale(1);
+  transition: transform 150ms;
+}
+.perspective:hover {
+  transform: scale(var(--zoomLevel));
+  z-index: 10;
+}
+
+.object {
+  /* height: 100%;
+  width: 100%;
+  object-fit: cover; */
+  transition: transform 200ms, filter 150ms, box-shadow 250ms;
+}
+.object:hover {
+  transition: transform 0ms, filter 150ms, box-shadow 50ms;
+}
+.perspective:hover .object {
+  box-shadow: 0 5rem 5rem -5rem rgba(0, 0, 0, 0.75);
+}

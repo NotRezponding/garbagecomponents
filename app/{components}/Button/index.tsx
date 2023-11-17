@@ -22,15 +22,15 @@ const Button: FC<
         const topCenter = height / 2;
         const leftCenter = width / 2;
 
-        const currentX = e.pageX - left - leftCenter;
-        const currentY = e.pageY - top - topCenter;
+        const currentX = e.clientX - left - leftCenter;
+        const currentY = e.clientY - top - topCenter;
 
         // console.log(topCenter);
         // console.log(leftCenter);
 
         buttonRef.current?.style.setProperty(
           "transform",
-          `translate(${currentX / 2}px, ${currentY / 2}px)`
+          `translate(${currentX / 4}px, ${currentY / 4}px)`
         );
       }}
       onMouseLeave={(e) => {
@@ -49,8 +49,8 @@ const Button: FC<
           const width = e.currentTarget.getBoundingClientRect().width;
           const top = e.currentTarget.getBoundingClientRect().top;
           const left = e.currentTarget.getBoundingClientRect().left;
-          circleRef.current?.style.setProperty("top", `${e.pageY - top}px`);
-          circleRef.current?.style.setProperty("left", `${e.pageX - left}px`);
+          circleRef.current?.style.setProperty("top", `${e.clientY - top}px`);
+          circleRef.current?.style.setProperty("left", `${e.clientX - left}px`);
           circleRef.current?.style.setProperty("opacity", "1");
           circleRef.current?.style.setProperty("--scale", "1");
           circleRef.current?.style.setProperty(
